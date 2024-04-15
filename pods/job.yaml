@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cowsay
+spec:
+  template:
+    spec:
+      containers:
+      - name: cowsay
+        image: rancher/cowsay:latest
+        args: ["Hello! I'm a cow"]
+      restartPolicy: Never
+  backoffLimit: 4
+
